@@ -18,7 +18,7 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 RUN python3.6 -m pip install pip --upgrade
-RUN python3.6 -m pip install wheel nltk jamspell get_stop_words pymystem3 langdetect
+RUN python3.6 -m pip install wheel nltk jamspell stop-words pymystem3 langdetect
 
 ADD . /app
 
