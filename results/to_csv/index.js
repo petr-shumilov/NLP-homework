@@ -1,4 +1,5 @@
-const jsonFile 			= require('../result.json');
+const lemmantizedFile 	= require('../result.json');
+const frequencyFile 	= require('../frequency.json');
 const createCsvWriter 	= require('csv-writer').createObjectCsvWriter;
 
 const csvWriter = createCsvWriter({
@@ -11,23 +12,30 @@ const csvWriter = createCsvWriter({
     ]
 });
  
-let lemmarFreq = []
-for (let lemma in jsonFile) {
-	lemmarFreq.push([jsonFile[lemma].length, lemma]);
+let lemmaFreq = []
+for (let lemma in frequencyFile) {
+	lemmaFreq.push([frequencyFile[lemma], lemma]);
 }
 
 console.log('Sorting...'); 
-lemmarFreq.sort((a, b) => b[0] - a[0]);
+lemmaFreq.sort((a, b) => b[0] - a[0]);
 
 console.log('Formatting for writing to csv');
 
 let records = [];
-for (let i in lemmarFreq) {
-	records.push({
-		lemma: lemmarFreq[i][1],	
-		words: jsonFile[lemmarFreq[i][1]].join(','),
-		frequency: lemmarFreq[i][0]	
-	})
+let count = 0;
+for (let i in lemmaFreq) {
+	try {
+		let lemma = lemmaFreq[i][1];
+		records.push({
+			lemma,	
+			words: lemmantizedFile[lemma].join(','),
+			frequency: lemmaFreq[i][0]	
+		})
+	}
+	catch (e) {
+		continue;
+	}
 }
 
 console.log('Writing...');
