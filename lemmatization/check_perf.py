@@ -39,7 +39,6 @@ def main():
 
     logger.info("Started")
     normalizer = Normalizer()
-    lemmas = defaultdict(set)
     count = 0
     words_amount = 0
     start_time = time.time()
@@ -62,7 +61,6 @@ def main():
 
             for word in preprocessed_text.split():
                 lemma = normalizer.lemmatize(word)
-                lemmas[lemma].add(word)
                 words_amount += 1 
 
         except Exception:
@@ -74,7 +72,7 @@ def main():
     end_time = time.time()
     execution_time = end_time - start_time
     perf = float(words_amount) / float(execution_time)
-    logger.info("Execution time: {}; Words: {}; Word per second: {}".format(execution_time, words_amount, perf))
+    logger.info("Execution time: {}; Words: {}; Words per second: {}".format(execution_time, words_amount, perf))
     logger.info("Done!")
 
 if __name__ == '__main__':
