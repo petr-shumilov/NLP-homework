@@ -1,0 +1,33 @@
+====== RESULTS =======
+Average words per 1 second: 870
+ 
+
+
+
+======= LOG =======
+root@8c5c3963f6f0:/app/lemmatization# python3.6 check_perf.py 
+[2019-01-09 11:14:03,095] INFO - Preparing models...
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[2019-01-09 11:14:06,552] INFO - Data opening
+[2019-01-09 11:14:06,552] INFO - Started
+[2019-01-09 11:16:45,680] INFO - Execution time: 159.1271629333496; Words: 142020; Words per second: 892.49376022298
+[2019-01-09 11:16:45,680] INFO - Done!
+
+root@8c5c3963f6f0:/app/lemmatization# python3.6 check_perf.py 
+[2019-01-09 11:30:20,462] INFO - Preparing models...
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[2019-01-09 11:30:23,592] INFO - Data opening
+[2019-01-09 11:30:23,593] INFO - Started
+[2019-01-09 11:33:09,853] INFO - Execution time: 166.24295234680176; Words: 141743; Words per second: 852.625618103244
+[2019-01-09 11:33:09,886] INFO - Done!
+
+root@8c5c3963f6f0:/app/lemmatization# python3.6 check_perf.py 
+[2019-01-09 12:28:18,227] INFO - Preparing models...
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[2019-01-09 12:28:21,539] INFO - Data opening
+[2019-01-09 12:28:21,540] INFO - Started
+[2019-01-09 12:31:05,269] INFO - Execution time: 163.7295744419098; Words: 142086; Words per second: 867.8090105853857
+[2019-01-09 12:31:05,270] INFO - Done!
